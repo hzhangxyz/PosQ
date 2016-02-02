@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script>
+			v=function(x){return document.getElementById(x).value}
+			pos=function(){
+				xmlHttp = new XMLHttpRequest()
+				xmlHttp.open("GET","?j1="+v("j1")+"&w1="+v("w1")+"&d1="+v("d1")+"&j2="+v("j2")+"&w2="+v("w2")+"&d2="+v("d2"),false)
+				xmlHttp.send(null)
+				document.getElementById("ans").innerHTML=xmlHttp.responseText
+				window.localStorage.j1=v("j1")
+				window.localStorage.w1=v("w1")
+				window.localStorage.d1=v("d1")
+				window.localStorage.j2=v("j2")
+				window.localStorage.w2=v("w2")
+				window.localStorage.d2=v("d2")
+				return true
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+		<tr>
+			<th>
+			<th>经度
+			<th>纬度
+			<th>距离
+		<tr>
+			<th>地一
+			<th><input id=j1>
+			<th><input id=w1>
+			<th><input id=d1>
+		<tr>
+			<th>地二
+			<th><input id=j2>
+			<th><input id=w2>
+			<th><input id=d2>
+		</table>
+		<button style="width:100%" onclick="pos()">get position</button>
+		<p id=ans></p>
+		<script>
+			document.getElementById("j1").value=window.localStorage.j1
+			document.getElementById("w1").value=window.localStorage.w1
+			document.getElementById("d1").value=window.localStorage.d1
+			document.getElementById("j2").value=window.localStorage.j2
+			document.getElementById("w2").value=window.localStorage.w2
+			document.getElementById("d2").value=window.localStorage.d2
+		</script>
+	</body>
+</html>
