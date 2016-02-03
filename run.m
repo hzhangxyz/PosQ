@@ -1,5 +1,6 @@
 #!/usr/local/bin/WolframScript -script
-L=ToExpression&/@$ScriptCommandLine[[2;;]]
+LL=StringReplace[#,{" "->"+"}]&/@$ScriptCommandLine[[2;;]]
+L=ToExpression/@LL
 Fun[p1_, d1_, p2_, d2_] := (r = 6371.4;
   s[p_] := 
    r {Cos[p[[2]]] Cos[p[[1]]], Cos[p[[2]]] Sin[p[[1]]], Sin[p[[2]]]};
