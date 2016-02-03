@@ -2,9 +2,10 @@
 	<head>
 		<script>
 			v=function(x){return document.getElementById(x).value}
+			vv=function(x){return encodeURIComponent(v(x))}
 			pos=function(){
 				xmlHttp = new XMLHttpRequest()
-				xmlHttp.open("GET","?j1="+v("j1")+"&w1="+v("w1")+"&d1="+v("d1")+"&j2="+v("j2")+"&w2="+v("w2")+"&d2="+v("d2"),false)
+				xmlHttp.open("GET","?j1="+vv("j1")+"&w1="+vv("w1")+"&d1="+vv("d1")+"&j2="+vv("j2")+"&w2="+vv("w2")+"&d2="+vv("d2"),false)
 				xmlHttp.send(null)
 				document.getElementById("ans").innerHTML=xmlHttp.responseText
 				window.localStorage.j1=v("j1")

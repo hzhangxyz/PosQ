@@ -1,5 +1,5 @@
 #!/usr/local/bin/WolframScript -script
-LL=StringReplace[#,{" "->"+"}]&/@$ScriptCommandLine[[2;;]]
+LL=$ScriptCommandLine[[2;;]]
 L=ToExpression/@LL
 Fun[p1_, d1_, p2_, d2_] := (r = 6371.4;
   s[p_] := 

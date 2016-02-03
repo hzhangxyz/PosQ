@@ -8,7 +8,7 @@ app = Flask(__name__)
 def position():
 	if "j1" in request.args:
 		m=request.args
-		arg=map(lambda x:str(m[x]),["j1","w1","d1","j2","w2","d2"])
+		arg=map(lambda x:str(eval(str(m[x]))),["j1","w1","d1","j2","w2","d2"])
 		test=''.join(arg)
 		for i in test:
 			if ("a"<=i<="z") or ("A"<=i<="Z"):
